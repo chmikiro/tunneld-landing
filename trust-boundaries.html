@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+<meta charset="utf-8"/>
+<meta name="viewport" content="width=device-width,initial-scale=1"/>
+<meta name="color-scheme" content="dark"/>
+<meta name="theme-color" content="#181818"/>
+<meta name="referrer" content="no-referrer"/>
+<title>Trust Boundaries — Tunnel'd</title>
+<meta name="description" content="What Tunnel'd can and cannot observe: IP info providers, the DNS leak test service, and the Android networking stack."/>
+<link rel="canonical" href="https://tunneld.app/trust-boundaries.html"/>
+<link rel="icon" href="https://i.imgur.com/qEz4aGj.png"/>
+<link rel="stylesheet" href="style.css"/>
+</head>
+<body id="top">
+<a class="skip" href="#main">Skip to content</a>
+<div class="orb orb-a"></div>
+<div class="orb orb-b"></div>
+
+<nav aria-label="Main">
+  <a href="./" class="logo"><img class="logo-icon" src="https://i.imgur.com/qEz4aGj.png" alt="" width="30" height="30"/>Tunnel'd</a>
+  <div class="nav-r">
+    <a href="privacy-policy.html" class="nav-link">Privacy policy</a>
+    <a href="./" class="nav-pill">← Back to site</a>
+  </div>
+</nav>
+
+<main id="main">
+<div class="wrap doc-wrap">
+<article class="doc">
+    <h1>Trust boundaries</h1>
+    <p class="meta">Last updated: August 16, 2026</p>
+
+    <p>Tunnel'd relies on <strong>three</strong> kinds of external visibility:</p>
+
+    <ul>
+        <li>IP info providers. These providers can see the request used to determine the public IP and return metadata such as country, ISP, or organization.</li>
+        <li>The Tunnel'd / ipdia.li DNS leak test service. This service can observe resolver-related requests that reach the test infrastructure and report them back to the app.</li>
+        <li>The Android networking stack. Tunnel'd reports what it can observe and what its configured services can observe. It cannot guarantee that Android, a VPN app, or another app never uses a different resolver path outside the observed test flow.</li>
+    </ul>
+
+    <p>As a consequence:</p>
+
+    <ul>
+        <li>Tunnel'd should be used as a measurement tool, not as a guarantee.</li>
+        <li>Results are strongest when repeated across different networks, apps, and transition states.</li>
+        <li>Users with strict privacy requirements should verify behavior with independent packet capture and resolver-side testing as well.</li>
+    </ul>
+
+    <h2>Contact</h2>
+    <p>For questions or concerns, open an issue at <a class="link" href="https://github.com/chmikiro/tunneld" target="_blank" rel="noopener noreferrer">github.com/chmikiro/tunneld</a>.</p>
+</article>
+</div>
+</main>
+
+<div class="wrap">
+  <footer>
+    <div class="foot-left"><div class="foot-dot"></div>tunneld.app · GPLv3 · no trackers</div>
+    <div class="foot-links">
+      <a href="./">home</a>
+      <a href="privacy-policy.html">privacy</a>
+      <a href="https://github.com/chmikiro/tunneld" target="_blank" rel="noopener noreferrer">github</a>
+    </div>
+  </footer>
+</div>
+</body>
+</html>
